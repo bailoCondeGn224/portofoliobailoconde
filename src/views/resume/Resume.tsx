@@ -52,7 +52,7 @@ const Resume = () => {
                     Développement d'applications web en JavaScript et React
                   </li>
                   <li>
-                    Intégration avec des services backend en utilisant Node.js
+                    Intégration avec des services backend en utilisant Nest js
                   </li>
                 </ul>
               </div>
@@ -63,7 +63,7 @@ const Resume = () => {
                   Développeur Frontend
                 </h3>
                 <ul className="text-gray-300">
-                  <li>XYZ Corporation</li>
+                  <li>Orange Guinee</li>
                   <li>
                     Création d'interfaces utilisateur modernes avec React et
                     TypeScript

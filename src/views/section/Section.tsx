@@ -4,6 +4,7 @@ import { IoLogoTwitter } from "react-icons/io";
 import { SiFacebook } from "react-icons/si";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import PhotoFolio from "../../assets/img/conde.png";
+import CV from "../../assets/jobs/bailoConde.pdf";
 
 interface AnimatedCounterProps {
   target: number;
@@ -44,7 +45,9 @@ const Section = () => {
             </p>
           </div>
           <div className="flex flex-col md:flex-row items-center mt-8 space-y-4 md:space-y-0 md:space-x-4">
-            <motion.button
+            <motion.a
+              href={CV}
+              download="Bailo_CV.pdf"
               className="flex items-center text-green-500 font-bold text-lg p-2 border rounded-full border-green-500"
               whileHover={{
                 scale: 1.1,
@@ -61,20 +64,43 @@ const Section = () => {
               >
                 <FaArrowDown />
               </motion.span>
-            </motion.button>
+            </motion.a>
             <div className="flex space-x-4">
-              <button className="p-2 border-2 text-green-500 border-green-500 rounded-full hover:bg-white transition-colors">
+              <a
+                href="https://github.com/bailoCondeGn224"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border-2 text-green-500 border-green-500 rounded-full hover:bg-white transition-colors"
+              >
                 <FaGithub />
-              </button>
-              <button className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors">
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/bailo-conde-762330205/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors"
+              >
                 <FaLinkedin className="text-green-500" />
-              </button>
-              <button className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors">
+              </a>
+
+              <a
+                href="https://twitter.com/your-twitter-username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors"
+              >
                 <IoLogoTwitter className="text-green-500" />
-              </button>
-              <button className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors">
+              </a>
+
+              <a
+                href="https://www.facebook.com/mamadoubailo.conde.393"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors"
+              >
                 <SiFacebook className="text-green-500" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -18,11 +18,16 @@ const Contact = () => {
             Travaillons ensemble
           </h1>
           <p className="mb-6 text-sm sm:text-base leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam eaque
-            delectus voluptatum explicabo laboriosam labore quas sint quod
-            dolor, natus optio nemo et, exercitationem, facilis excepturi
-            quaerat qui illum commodi.
+            Vous avez un projet en tête et souhaitez le concrétiser ? Avec une
+            expertise en développement d'applications, je vous accompagne à
+            chaque étape pour créer des solutions innovantes et adaptées à vos
+            besoins. Que ce soit pour une application mobile, une plateforme web
+            ou une interface utilisateur, je mets mon savoir-faire à votre
+            service pour réaliser vos idées. N'attendez plus pour donner vie à
+            vos projets, contactez-moi dès aujourd'hui et transformons ensemble
+            vos idées en réalité !
           </p>
+
           <form className="space-y-4">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               <input

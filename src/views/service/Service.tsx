@@ -7,10 +7,30 @@ const Service = () => {
     <div className="text-white mx-auto w-full lg:max-w-6xl px-4 flex items-center justify-center min-h-screen">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {[
-          { id: 1, title: "Développeur Frontend" },
-          { id: 2, title: "UI/UX Designer" },
-          { id: 3, title: "Développeur Backend" },
-          { id: 4, title: "Développeur Mobile" },
+          {
+            id: 1,
+            title: "Développeur Frontend",
+            description:
+              "Compétences solides en développement frontend, avec une maîtrise de technologies modernes telles que React.js, TypeScript, Tailwind CSS, Material UI, HTML, CSS et Bootstrap, permettant de créer des interfaces utilisateur réactives, esthétiques et fonctionnelles.",
+          },
+          {
+            id: 2,
+            title: "UI/UX Designer",
+            description:
+              "Compétences en design UI/UX avec Figma pour le prototypage interactif et Canva pour la création de visuels, permettant de concevoir des interfaces intuitives et esthétiques, centrées sur l'expérience utilisateur.",
+          },
+          {
+            id: 3,
+            title: "Développeur Backend",
+            description:
+              "Expérience en développement backend avec une expertise dans NestJS, Spring Boot et Laravel, garantissant la création d'architectures robustes et performantes pour des applications web et mobiles.",
+          },
+          {
+            id: 4,
+            title: "Développeur Mobile",
+            description:
+              "Compétences en développement mobile avec React Native, permettant de concevoir des applications mobiles performantes et optimisées pour une expérience utilisateur fluide sur les plateformes iOS et Android.",
+          },
         ].map((service) => (
           <motion.div
             key={service.id}
@@ -28,12 +48,7 @@ const Service = () => {
               </motion.span>
             </div>
             <h1 className="text-2xl font-bold py-2">{service.title}</h1>
-            <p className="text-sm leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-              officiis illum et quas asperiores deserunt est fuga reprehenderit
-              labore nisi, commodi sequi, deleniti delectus totam laboriosam
-              magni eveniet dicta in!
-            </p>
+            <p className="text-sm leading-relaxed">{service.description}</p>
           </motion.div>
         ))}
       </div>
