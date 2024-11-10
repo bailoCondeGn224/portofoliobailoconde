@@ -8,7 +8,7 @@ import Service from "./views/service/Service";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portofoliobailoconde">
       <div>
         <Navbar />
         <Routes>
@@ -17,6 +17,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/travail" element={<Work />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Section />} />
         </Routes>
       </div>
     </Router>

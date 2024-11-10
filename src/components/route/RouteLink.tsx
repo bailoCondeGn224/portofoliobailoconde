@@ -21,7 +21,7 @@ export const linksRouter: Link[] = [
   },
   {
     id: 3,
-    text: "Resumé",
+    text: "Mon CV",
     link: "/resume",
   },
   {

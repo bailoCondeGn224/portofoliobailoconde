@@ -1,19 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Link, linksRouter } from "../../components/route/RouteLink";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar: React.FC = () => {
-  const [isActive, setIsActive] = useState("Accueil");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const saveToLocalStorage = (key: string, value: string) => {
-    localStorage.setItem(key, value);
-  };
+  // const saveToLocalStorage = (key: string, value: string) => {
+  //   localStorage.setItem(key, value);
+  // };
 
   const handleActive = (e: string) => {
-    saveToLocalStorage("name", e);
+    // saveToLocalStorage("name", e);
     setIsMenuOpen(false);
   };
 
@@ -26,19 +25,19 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Menu Desktop */}
-      <div className="hidden md:flex justify-around items-center gap-1">
+      <div className="hidden md:flex justify-around items-center gap-4">
         <ul className="flex justify-around items-center gap-4">
           {linksRouter.map((menu: Link) => (
             <li key={menu.id} className="relative">
               <NavLink
                 onClick={() => handleActive(menu.text)}
                 to={menu.link}
-                className={({ isActive }) =>
+                className={({ isActive, isPending }) =>
                   `cursor-pointer hover:text-green-500 relative block ${
                     isActive
                       ? "text-green-500 after:block after:absolute after:bottom-0 after:h-[3px] after:w-[100%] after:bg-green-500"
                       : ""
-                  }`
+                  } ${isPending ? "pending" : ""}`
                 }
               >
                 {menu.text}
@@ -70,12 +69,12 @@ const Navbar: React.FC = () => {
                 <NavLink
                   onClick={() => handleActive(menu.text)}
                   to={menu.link}
-                  className={({ isActive }) =>
+                  className={({ isActive, isPending }) =>
                     `cursor-pointer text-white ${
                       isActive
                         ? "text-green-500 after:block after:absolute after:bottom-0 after:h-[3px] after:w-[100%] after:bg-green-500"
                         : ""
-                    }`
+                    } ${isPending ? "pending" : ""}`
                   }
                 >
                   {menu.text}
