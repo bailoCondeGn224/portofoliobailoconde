@@ -31,110 +31,68 @@ const Resume = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-gray-800 p-6 rounded-lg shadow-lg"
+            className="bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg"
           >
-            <h2 className="text-4xl font-semibold mb-4 text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-white">
               Mes Expériences
             </h2>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-4 sm:mb-6 text-xs sm:text-sm lg:text-base leading-relaxed">
               Voici un aperçu de mes expériences professionnelles avec
               différentes missions et responsabilités.
             </p>
-            <div className=" overflow-y-auto h-[350px] grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2022 - Présent</p>
-                <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Développeur Full Stack
+            <div className="overflow-y-auto h-[300px] sm:h-[350px] lg:h-[400px] grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-xs sm:text-sm text-gray-400 mb-2">Mars 2024 - Présent</p>
+                <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-green-500 mb-2">
+                  Développeur Fullstack
                 </h3>
-                <ul className="text-gray-300">
-                  <li>Tulip Industrie</li>
-                  <li>
-                    Développement d'applications web en JavaScript et React
-                  </li>
-                  <li>
-                    Intégration avec des services backend en utilisant Nest js
-                  </li>
+                <ul className="text-gray-300 space-y-1 text-xs sm:text-sm lg:text-base">
+                  <li className="font-semibold text-sm sm:text-base">Caisse Nationale de Prévoyance Sociale (CNPS)</li>
+                  <li>• Participation à plusieurs projets gouvernementaux digitaux</li>
+                  <li>• DIRGA : Gestion de l'immatriculation et du recouvrement administratif</li>
+                  <li>• Branche Maladie : Gestion des actes médicaux et prestataires</li>
+                  <li className="text-xs italic mt-2">Technologies : Docker, React, NestJS, TypeScript, PostgreSQL</li>
                 </ul>
               </div>
 
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2021 - 2022</p>
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-sm text-gray-400 mb-2">2024 - Présent</p>
+                <h3 className="text-xl font-semibold text-green-500 mb-2">
+                  Entrepreneur & Développeur Fullstack
+                </h3>
+                <ul className="text-gray-300 space-y-1">
+                  <li className="font-semibold">Walli Paie & Walli Paie Express</li>
+                  <li>• Plateforme de paiement en masse pour les entreprises</li>
+                  <li>• Application mobile pour réduire l'usage de liquidité en Guinée</li>
+                  <li>• Déjà utilisée par plusieurs entreprises</li>
+                  <li className="text-sm italic">Technologies : NestJS, React, TypeScript, Flutter, Docker</li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-sm text-gray-400 mb-2">Octobre 2024 - Novembre 2024</p>
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
                   Développeur Frontend
                 </h3>
-                <ul className="text-gray-300">
-                  <li>Orange Guinee</li>
-                  <li>
-                    Création d'interfaces utilisateur modernes avec React et
-                    TypeScript
-                  </li>
-                  <li>
-                    Collaboration avec les équipes de design pour améliorer l'UX
-                  </li>
+                <ul className="text-gray-300 space-y-1">
+                  <li className="font-semibold">Orange Guinée - Digital Studio</li>
+                  <li>• Projet Déclaration d'Intérêt pour les employés d'Orange</li>
+                  <li>• Déploiement multi-pays (Guinée, Mali, Sénégal, Sierra Leone, Guinée-Bissau)</li>
+                  <li className="text-sm italic">Technologies : React.js, Tailwind CSS, TypeScript, Spring Boot</li>
                 </ul>
               </div>
 
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2020 - 2021</p>
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-sm text-gray-400 mb-2">Février 2024 - Juillet 2024</p>
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Développeur Backend
+                  Développeur Frontend (Stage)
                 </h3>
-                <ul className="text-gray-300">
-                  <li>ABC Technologies</li>
-                  <li>
-                    Développement de services RESTful avec Node.js et Express
-                  </li>
-                  <li>
-                    Gestion de bases de données et optimisation des requêtes SQL
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2020 - 2021</p>
-                <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Développeur Backend
-                </h3>
-                <ul className="text-gray-300">
-                  <li>ABC Technologies</li>
-                  <li>
-                    Développement de services RESTful avec Node.js et Express
-                  </li>
-                  <li>
-                    Gestion de bases de données et optimisation des requêtes SQL
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2020 - 2021</p>
-                <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Développeur Backend
-                </h3>
-                <ul className="text-gray-300">
-                  <li>ABC Technologies</li>
-                  <li>
-                    Développement de services RESTful avec Node.js et Express
-                  </li>
-                  <li>
-                    Gestion de bases de données et optimisation des requêtes SQL
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2020 - 2021</p>
-                <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Développeur Backend
-                </h3>
-                <ul className="text-gray-300">
-                  <li>ABC Technologies</li>
-                  <li>
-                    Développement de services RESTful avec Node.js et Express
-                  </li>
-                  <li>
-                    Gestion de bases de données et optimisation des requêtes SQL
-                  </li>
+                <ul className="text-gray-300 space-y-1">
+                  <li className="font-semibold">Orange Guinée - Digital Studio</li>
+                  <li>• Feinteingni : Application de gestion de collecte des ordures</li>
+                  <li>• Orange Jobs : Plateforme de recrutement</li>
+                  <li>• Walli Transport : Projet personnel développé parallèlement</li>
+                  <li className="text-sm italic">Technologies : React.js, NestJS, Tailwind CSS, Material UI</li>
                 </ul>
               </div>
             </div>
@@ -157,62 +115,54 @@ const Resume = () => {
               formations suivies.
             </p>
             <div className="overflow-y-auto h-[350px] grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Parcours secondaire */}
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2015 - 2018</p>
-                <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Baccalauréat en Sciences
-                </h3>
-                <ul className="text-gray-300">
-                  <li>Lycée de Conakry</li>
-                  <li>
-                    Formation générale avec des matières en mathématiques et
-                    sciences
-                  </li>
-                </ul>
-              </div>
-
               {/* Université */}
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2019 - 2022</p>
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-sm text-gray-400 mb-2">2018 - 2021</p>
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Licence en Informatique
+                  Licence en Informatique Fondamentale
                 </h3>
-                <ul className="text-gray-300">
-                  <li>Université Gamal Abdel Nasser de Conakry</li>
-                  <li>
-                    Études axées sur le développement logiciel et les bases de
-                    données
-                  </li>
-                  <li>
-                    Projets de fin d'études sur le développement d'applications
-                    web
-                  </li>
+                <ul className="text-gray-300 space-y-1">
+                  <li className="font-semibold">Université de Labé</li>
+                  <li>• Études axées sur le développement logiciel et les bases de données</li>
+                  <li>• Projets de fin d'études sur le développement d'applications web</li>
                 </ul>
               </div>
 
-              {/* Formations en ligne */}
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2022 - Présent</p>
+              {/* Formation Flutter */}
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-sm text-gray-400 mb-2">En cours depuis 2024</p>
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Formations en Ligne
+                  Formation en Développement Mobile Flutter
                 </h3>
-                <ul className="text-gray-300">
-                  <li>Udemy : Développement Web Complet</li>
-                  <li>Coursera : Spécialisation en Machine Learning</li>
-                  <li>Codecademy : Apprendre React et Node.js</li>
+                <ul className="text-gray-300 space-y-1">
+                  <li className="font-semibold">Projet Walli Paie Express</li>
+                  <li>• Développement d'applications mobiles avec Flutter</li>
+                  <li>• Application concrète sur un projet réel</li>
                 </ul>
               </div>
 
-              {/* Formation additionnelle */}
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <p className="text-sm text-gray-400 mb-2">2023 - Présent</p>
+              {/* Formation Anglais */}
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-sm text-gray-400 mb-2">Août 2024 - Présent</p>
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
-                  Certification en Développement Full Stack
+                  Formation en Anglais
                 </h3>
-                <ul className="text-gray-300">
-                  <li>OpenClassrooms</li>
-                  <li>Formation intensive sur les technologies web modernes</li>
+                <ul className="text-gray-300 space-y-1">
+                  <li className="font-semibold">Preply</li>
+                  <li>• Formation continue en anglais</li>
+                  <li>• Niveau débutant</li>
+                </ul>
+              </div>
+
+              {/* Certification CELPS */}
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <p className="text-sm text-gray-400 mb-2">Labé</p>
+                <h3 className="text-xl font-semibold text-green-500 mb-2">
+                  Certificat en Anglais Débutant
+                </h3>
+                <ul className="text-gray-300 space-y-1">
+                  <li className="font-semibold">CELPS</li>
+                  <li>• Certification en langue anglaise</li>
                 </ul>
               </div>
             </div>
@@ -267,7 +217,7 @@ const Resume = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Première carte avec les informations personnelles */}
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
                   Informations Personnelles
                 </h3>
@@ -275,7 +225,7 @@ const Resume = () => {
                   <strong>Nom:</strong> Bailo Conde
                 </p>
                 <p className="text-gray-300">
-                  <strong>Expérience:</strong> 2 ans+
+                  <strong>Expérience:</strong> 3 ans+
                 </p>
                 <p className="text-gray-300">
                   <strong>Nationalité:</strong> Guinéen
@@ -286,7 +236,7 @@ const Resume = () => {
               </div>
 
               {/* Deuxième carte avec les informations de contact */}
-              <div className="bg-gray-700 p-6 rounded-lg shadow-md">
+              <div className="bg-gray-700 p-4 sm:p-5 lg:p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
                   Informations de Contact
                 </h3>
@@ -313,61 +263,60 @@ const Resume = () => {
   };
 
   return (
-    <div className="mx-auto w-full text-white p-2 2xl:w-7/10 xl:w-4/5 lg:w-9/10 lg:mt-32">
-      <div className="flex gap-6 items-start max-md:flex-col max-md:w-full">
-        <div className="w-full max-md:w-full md:w-1/3 p-4 md:p-6 bg-gray-900 rounded-lg shadow-lg">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-center">
+    <div className="mx-auto w-full max-w-screen-2xl text-white px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-20 xl:py-24">
+      <div className="flex gap-4 sm:gap-6 lg:gap-8 xl:gap-12 items-start max-md:flex-col">
+        <div className="w-full md:w-1/3 p-4 sm:p-6 lg:p-8 bg-gray-900 rounded-lg shadow-lg">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 lg:mb-8 text-center">
             Pourquoi m'engager ?
           </h1>
-          <p className="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Consequuntur sapiente possimus beatae quia, quasi accusamus
-            voluptate debitis minima maiores alias.
+          <p className="text-gray-300 mb-4 sm:mb-6 lg:mb-8 text-xs sm:text-sm lg:text-base leading-relaxed">
+            Développeur fullstack passionné, fort d'une expérience solide en conception d'applications web et mobiles.
+            Motivé par la création de solutions utiles et performantes, je combine rigueur technique et esprit entrepreneurial.
           </p>
-          <ul className="space-y-2 md:space-y-4">
+          <ul className="space-y-2 sm:space-y-3 lg:space-y-4">
             <li
               onClick={() => setActiveTab("experience")}
-              className={`cursor-pointer p-2 text-sm md:text-lg rounded-lg ${
+              className={`cursor-pointer p-3 sm:p-4 text-sm sm:text-base lg:text-lg xl:text-xl rounded-lg transition-all duration-300 ${
                 activeTab === "experience"
-                  ? "bg-green-500 text-white"
-                  : "bg-gray-700"
-              } hover:bg-green-500`}
+                  ? "bg-green-500 text-white shadow-lg"
+                  : "bg-gray-700 hover:bg-gray-600"
+              } hover:bg-green-500 hover:shadow-lg`}
             >
               Expérience
             </li>
             <li
               onClick={() => setActiveTab("education")}
-              className={`cursor-pointer p-2 text-sm md:text-lg rounded-lg ${
+              className={`cursor-pointer p-3 sm:p-4 text-sm sm:text-base lg:text-lg xl:text-xl rounded-lg transition-all duration-300 ${
                 activeTab === "education"
-                  ? "bg-green-500 text-white"
-                  : "bg-gray-700"
-              } hover:bg-green-500`}
+                  ? "bg-green-500 text-white shadow-lg"
+                  : "bg-gray-700 hover:bg-gray-600"
+              } hover:bg-green-500 hover:shadow-lg`}
             >
               Éducation
             </li>
             <li
               onClick={() => setActiveTab("skills")}
-              className={`cursor-pointer p-2 text-sm md:text-lg rounded-lg ${
+              className={`cursor-pointer p-3 sm:p-4 text-sm sm:text-base lg:text-lg xl:text-xl rounded-lg transition-all duration-300 ${
                 activeTab === "skills"
-                  ? "bg-green-500 text-white"
-                  : "bg-gray-700"
-              } hover:bg-green-500`}
+                  ? "bg-green-500 text-white shadow-lg"
+                  : "bg-gray-700 hover:bg-gray-600"
+              } hover:bg-green-500 hover:shadow-lg`}
             >
               Compétences
             </li>
             <li
               onClick={() => setActiveTab("about")}
-              className={`cursor-pointer p-2 text-sm md:text-lg rounded-lg ${
+              className={`cursor-pointer p-3 sm:p-4 text-sm sm:text-base lg:text-lg xl:text-xl rounded-lg transition-all duration-300 ${
                 activeTab === "about"
-                  ? "bg-green-500 text-white"
-                  : "bg-gray-700"
-              } hover:bg-green-500`}
+                  ? "bg-green-500 text-white shadow-lg"
+                  : "bg-gray-700 hover:bg-gray-600"
+              } hover:bg-green-500 hover:shadow-lg`}
             >
               À propos de moi
             </li>
           </ul>
         </div>
-        <div className="w-full max-md:w-full md:w-2/3">{renderContent()}</div>
+        <div className="w-full md:w-2/3">{renderContent()}</div>
       </div>
     </div>
   );

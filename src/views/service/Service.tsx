@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const Service = () => {
   return (
-    <div className="text-white mx-auto w-full lg:max-w-6xl px-4 flex items-center justify-center min-h-screen">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div className="text-white mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-20 flex items-center justify-center min-h-screen">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
         {[
           {
             id: 1,
@@ -34,21 +34,22 @@ const Service = () => {
         ].map((service) => (
           <motion.div
             key={service.id}
-            className="shadow-lg rounded-lg p-6 bg-gray-800 hover:bg-green-500 transition duration-300"
-            whileHover={{ scale: 1.02 }}
+            className="shadow-lg rounded-lg p-4 sm:p-6 lg:p-8 bg-gray-800 hover:bg-green-500 transition-all duration-300 hover:shadow-2xl"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="flex justify-between items-center mb-4">
-              <span className="text-4xl font-bold">{`0${service.id}`}</span>
+            <div className="flex justify-between items-center mb-4 sm:mb-6">
+              <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-green-400">{`0${service.id}`}</span>
               <motion.span
-                className="bg-white text-black p-2 rounded-full border-2 border-white"
-                whileHover={{ x: 5 }}
+                className="bg-white text-black p-2 sm:p-3 rounded-full border-2 border-white"
+                whileHover={{ x: 5, rotate: 45 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                <WiDirectionDownRight className="text-2xl" />
+                <WiDirectionDownRight className="text-xl sm:text-2xl lg:text-3xl" />
               </motion.span>
             </div>
-            <h1 className="text-2xl font-bold py-2">{service.title}</h1>
-            <p className="text-sm leading-relaxed">{service.description}</p>
+            <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold py-2 sm:py-3">{service.title}</h1>
+            <p className="text-xs sm:text-sm lg:text-base leading-relaxed">{service.description}</p>
           </motion.div>
         ))}
       </div>

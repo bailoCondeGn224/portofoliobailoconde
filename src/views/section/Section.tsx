@@ -26,16 +26,16 @@ const Section = () => {
   const targetDuration = 5;
 
   return (
-    <div className="py-3 mx-auto w-full 2xl:w-7/10 xl:w-4/5 lg:w-9/10  xl:mt-10 2xl:mt-16">
-      <div className="flex flex-col md:flex-row items-center text-white max-md:text-center space-y-8 md:space-y-0 md:space-x-8">
+    <div className="py-6 sm:py-8 lg:py-12 xl:py-16 px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto w-full max-w-screen-2xl">
+      <div className="flex flex-col md:flex-row items-center text-white max-md:text-center space-y-8 md:space-y-0 md:space-x-6 lg:space-x-10 xl:space-x-16">
         {/* Partie gauche */}
-        <div className="w-full md:w-1/2 p-4 space-y-4 max-md:order-2">
-          <p className="text-lg md:text-xl">Développeur logiciel</p>
-          <p className="text-4xl md:text-6xl font-bold">Salut, je suis</p>
-          <p className="text-4xl md:text-6xl font-bold text-green-500">
+        <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 lg:space-y-6 max-md:order-2">
+          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-green-400">Développeur logiciel</p>
+          <p className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight">Salut, je suis</p>
+          <p className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-green-500 leading-tight">
             Bailo Condé
           </p>
-          <div className="mt-4 md:mt-6 text-sm md:text-base leading-relaxed">
+          <div className="pt-2 sm:pt-4 text-sm sm:text-base lg:text-lg leading-relaxed">
             <p>
               "En tant que développeur logiciel passionné et expérimenté, je
               suis convaincu que ma capacité à résoudre des problèmes complexes,
@@ -44,11 +44,11 @@ const Section = () => {
               un atout précieux pour votre entreprise."
             </p>
           </div>
-          <div className="flex flex-col md:flex-row items-center mt-8 space-y-4 md:space-y-0 md:space-x-4">
+          <div className="flex flex-col sm:flex-row items-center pt-4 sm:pt-6 lg:pt-8 space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
             <motion.a
               href={CV}
               download="Bailo_CV.pdf"
-              className="flex items-center text-green-500 font-bold text-lg p-2 border rounded-full border-green-500"
+              className="flex items-center gap-2 text-green-500 font-bold text-base sm:text-lg lg:text-xl py-2 px-4 sm:py-3 sm:px-6 lg:py-3 lg:px-8 border-2 rounded-full border-green-500"
               whileHover={{
                 scale: 1.1,
                 backgroundColor: "#22c55e",
@@ -65,12 +65,12 @@ const Section = () => {
                 <FaArrowDown />
               </motion.span>
             </motion.a>
-            <div className="flex space-x-4">
+            <div className="flex gap-3 sm:gap-4">
               <a
                 href="https://github.com/bailoCondeGn224"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border-2 text-green-500 border-green-500 rounded-full hover:bg-white transition-colors"
+                className="p-2 sm:p-3 lg:p-3.5 border-2 text-green-500 border-green-500 rounded-full hover:bg-green-500 hover:text-white transition-all duration-300 text-lg sm:text-xl lg:text-2xl"
               >
                 <FaGithub />
               </a>
@@ -79,27 +79,27 @@ const Section = () => {
                 href="https://www.linkedin.com/in/bailo-conde-762330205/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors"
+                className="p-2 sm:p-3 lg:p-3.5 border-2 border-green-500 rounded-full hover:bg-green-500 transition-all duration-300 text-lg sm:text-xl lg:text-2xl"
               >
-                <FaLinkedin className="text-green-500" />
+                <FaLinkedin className="text-green-500 hover:text-white" />
               </a>
 
               <a
                 href="https://twitter.com/your-twitter-username"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors"
+                className="p-2 sm:p-3 lg:p-3.5 border-2 border-green-500 rounded-full hover:bg-green-500 transition-all duration-300 text-lg sm:text-xl lg:text-2xl"
               >
-                <IoLogoTwitter className="text-green-500" />
+                <IoLogoTwitter className="text-green-500 hover:text-white" />
               </a>
 
               <a
                 href="https://www.facebook.com/mamadoubailo.conde.393"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border-2 border-green-500 rounded-full hover:bg-white transition-colors"
+                className="p-2 sm:p-3 lg:p-3.5 border-2 border-green-500 rounded-full hover:bg-green-500 transition-all duration-300 text-lg sm:text-xl lg:text-2xl"
               >
-                <SiFacebook className="text-green-500" />
+                <SiFacebook className="text-green-500 hover:text-white" />
               </a>
             </div>
           </div>
@@ -107,43 +107,47 @@ const Section = () => {
 
         {/* Partie droite avec image */}
         <motion.div
-          className="w-full md:w-1/2 h-auto flex justify-center items-center p-2 border-2 border-green-500 rounded-full max-md:order-1 relative z-10"
+          className="w-full md:w-1/2 h-auto flex justify-center items-center p-2 sm:p-3 border-2 sm:border-4 border-green-500 rounded-full max-md:order-1 relative z-10"
           animate={{ rotate: 360 }}
-          transition={{ duration: targetDuration, ease: "linear" }}
+          transition={{ duration: targetDuration, ease: "linear", repeat: 0 }}
         >
           <img
             src={PhotoFolio}
             alt="Bailo Condé"
-            className="w-40 h-40 md:w-60 md:h-60 rounded-full"
+            className="w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-64 lg:h-64 xl:w-80 xl:h-80 rounded-full object-cover"
           />
         </motion.div>
       </div>
 
       {/* Compteurs */}
-      <div className="text-white mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-md:mt-2">
-        <div>
-          <p className="text-2xl md:text-6xl font-bold flex justify-center items-center ">
+      <div className="text-white mt-12 sm:mt-16 lg:mt-20 xl:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 xl:gap-12 text-center">
+        <div className="p-2 sm:p-4">
+          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold flex justify-center items-center text-green-500">
             <AnimatedCounter target={3} />
+            <span>+</span>
           </p>
-          <span className="text-sm md:text-base">Année d'expérience</span>
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg mt-2 block">Années d'expérience</span>
         </div>
-        <div>
-          <p className="text-2xl md:text-6xl font-bold flex justify-center items-center">
+        <div className="p-2 sm:p-4">
+          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold flex justify-center items-center text-green-500">
             <AnimatedCounter target={10} />
+            <span>+</span>
           </p>
-          <span className="text-sm md:text-base">Projets Complets</span>
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg mt-2 block">Projets Complets</span>
         </div>
-        <div>
-          <p className="text-2xl md:text-6xl font-bold flex justify-center items-center">
+        <div className="p-2 sm:p-4">
+          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold flex justify-center items-center text-green-500">
             <AnimatedCounter target={7} />
+            <span>+</span>
           </p>
-          <span className="text-sm md:text-base">Technologies maîtrisées</span>
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg mt-2 block">Technologies maîtrisées</span>
         </div>
-        <div>
-          <p className="text-2xl md:text-6xl font-bold flex justify-center items-center">
+        <div className="p-2 sm:p-4">
+          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold flex justify-center items-center text-green-500">
             <AnimatedCounter target={100} />
+            <span>+</span>
           </p>
-          <span className="text-sm md:text-base">Commits de code</span>
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg mt-2 block">Commits de code</span>
         </div>
       </div>
     </div>
