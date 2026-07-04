@@ -8,7 +8,10 @@ import WalliPaie from "../../assets/jobs/walli paie.png";
 import Walli from "../../assets/jobs/walli.png";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import Container from "../../components/ui/Container";
+import Badge from "../../components/ui/Badge";
+import SectionHeading from "../../components/ui/SectionHeading";
 
 interface Project {
   id: number;
@@ -20,47 +23,47 @@ interface Project {
   demoLink?: string;
 }
 
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "Walli Paie",
+    description: "Plateforme de paiement en masse pour les entreprises. Solution de digitalisation des transactions visant à réduire l'usage de liquidité en Guinée.",
+    technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "Docker"],
+    image: WalliPaie,
+  },
+  {
+    id: 2,
+    title: "Walli Paie Back Office",
+    description: "Interface d'administration pour la gestion de la plateforme Walli Paie. Permet la gestion des entreprises, des transactions et des utilisateurs.",
+    technologies: ["React", "NestJS", "TypeScript", "Tailwind CSS", "Material UI"],
+    image: Walli,
+  },
+  {
+    id: 3,
+    title: "DIRGA - CNPS",
+    description: "Application gouvernementale pour la gestion de l'immatriculation et du recouvrement administratif à la Caisse Nationale de Prévoyance Sociale.",
+    technologies: ["React", "NestJS", "Docker", "TypeScript", "PostgreSQL"],
+    image: Dirga,
+  },
+  {
+    id: 4,
+    title: "Déclaration d'Intérêt - Orange",
+    description: "Application permettant aux employés d'Orange de déclarer leurs biens et entreprises. Déployée dans 5 pays (Guinée, Mali, Sénégal, Sierra Leone, Guinée-Bissau).",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Spring Boot"],
+    image: Interet,
+  },
+  {
+    id: 5,
+    title: "Feinteingni",
+    description: "Application de gestion de collecte des ordures développée pour Orange Guinée dans le cadre d'un projet de digitalisation des services municipaux.",
+    technologies: ["React", "NestJS", "Tailwind CSS", "Material UI"],
+    image: Feinteingni,
+  },
+];
+
 const Work = () => {
   const [isMobile, setIsMobile] = useState(false);
-
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "Walli Paie",
-      description: "Plateforme de paiement en masse pour les entreprises. Solution de digitalisation des transactions visant à réduire l'usage de liquidité en Guinée.",
-      technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "Docker"],
-      image: WalliPaie,
-      demoLink: "#"
-    },
-    {
-      id: 2,
-      title: "Walli Paie Back Office",
-      description: "Interface d'administration pour la gestion de la plateforme Walli Paie. Permet la gestion des entreprises, des transactions et des utilisateurs.",
-      technologies: ["React", "NestJS", "TypeScript", "Tailwind CSS", "Material UI"],
-      image: Walli
-    },
-    {
-      id: 3,
-      title: "DIRGA - CNPS",
-      description: "Application gouvernementale pour la gestion de l'immatriculation et du recouvrement administratif à la Caisse Nationale de Prévoyance Sociale.",
-      technologies: ["React", "NestJS", "Docker", "TypeScript", "PostgreSQL"],
-      image: Dirga
-    },
-    {
-      id: 4,
-      title: "Déclaration d'Intérêt - Orange",
-      description: "Application permettant aux employés d'Orange de déclarer leurs biens et entreprises. Déployée dans 5 pays (Guinée, Mali, Sénégal, Sierra Leone, Guinée-Bissau).",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Spring Boot"],
-      image: Interet
-    },
-    {
-      id: 5,
-      title: "Feinteingni",
-      description: "Application de gestion de collecte des ordures développée pour Orange Guinée dans le cadre d'un projet de digitalisation des services municipaux.",
-      technologies: ["React", "NestJS", "Tailwind CSS", "Material UI"],
-      image: Feinteingni
-    }
-  ];
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -79,6 +82,17 @@ const Work = () => {
     slidesToScroll: 1,
   });
 
+  const onSelect = useCallback(() => {
+    if (emblaApi) setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
+
   const scrollNext = () => {
     if (emblaApi) emblaApi.scrollNext();
   };
@@ -88,12 +102,13 @@ const Work = () => {
   };
 
   return (
-    <div className="text-white mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-20">
+    <Container className="py-12 sm:py-16 lg:py-20">
+      <SectionHeading eyebrow="Portfolio" title="Mes réalisations" />
       <div className="flex items-center justify-between mb-4 sm:mb-6 lg:mb-8 gap-2 sm:gap-3 lg:gap-4">
         {!isMobile && (
           <motion.button
             onClick={scrollPrev}
-            className="border border-gray-500 p-2 sm:p-2.5 md:p-3 rounded-full hover:bg-green-500 transition-colors duration-200"
+            className="border border-border p-2 sm:p-2.5 md:p-3 rounded-full hover:bg-brand-500 hover:text-black transition-colors duration-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -120,30 +135,28 @@ const Work = () => {
               >
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
                   <div className="w-full md:w-[48%] lg:w-[47%] space-y-2 sm:space-y-3 lg:space-y-4">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-brand-500/30 font-display">
                       {String(index + 1).padStart(2, "0")}
                     </h1>
-                    <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
+                    <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-text-primary font-display">
                       {project.title}
                     </p>
-                    <p className="text-xs sm:text-sm lg:text-base xl:text-lg leading-relaxed text-gray-300">
+                    <p className="text-xs sm:text-sm lg:text-base xl:text-lg leading-relaxed text-text-muted">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap justify-start items-center gap-2 py-2 sm:py-3 lg:py-4 text-green-500">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="text-xs sm:text-sm lg:text-base bg-gray-800 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full">
-                          {tech}
-                        </span>
+                    <div className="flex flex-wrap justify-start items-center gap-2 py-2 sm:py-3 lg:py-4">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech}>{tech}</Badge>
                       ))}
                     </div>
-                    <hr className="border-green-500 my-2 sm:my-3 lg:my-4" />
+                    <hr className="border-border my-2 sm:my-3 lg:my-4" />
                     <div className="flex space-x-2 sm:space-x-3 md:space-x-4 mt-2 py-2 sm:py-3">
                       {project.githubLink && (
                         <motion.a
                           href={project.githubLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="border border-gray-500 p-1.5 sm:p-2 md:p-2.5 lg:p-3 rounded-full hover:bg-green-500"
+                          className="border border-border p-1.5 sm:p-2 md:p-2.5 lg:p-3 rounded-full hover:bg-brand-500 hover:text-black"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
@@ -155,7 +168,7 @@ const Work = () => {
                           href={project.demoLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="border border-gray-500 p-1.5 sm:p-2 md:p-2.5 lg:p-3 rounded-full hover:bg-green-500"
+                          className="border border-border p-1.5 sm:p-2 md:p-2.5 lg:p-3 rounded-full hover:bg-brand-500 hover:text-black"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
@@ -168,7 +181,7 @@ const Work = () => {
                     <motion.img
                       src={project.image}
                       alt={`Projet ${project.title}`}
-                      className="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                      className="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-border"
                       initial={{ scale: 0.9, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.5 }}
@@ -182,7 +195,7 @@ const Work = () => {
         {!isMobile && (
           <motion.button
             onClick={scrollNext}
-            className="border border-gray-500 p-2 sm:p-2.5 md:p-3 rounded-full hover:bg-green-500 transition-colors duration-200"
+            className="border border-border p-2 sm:p-2.5 md:p-3 rounded-full hover:bg-brand-500 hover:text-black transition-colors duration-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -190,7 +203,21 @@ const Work = () => {
           </motion.button>
         )}
       </div>
-    </div>
+      {!isMobile && (
+        <div className="flex justify-center gap-2 mt-2">
+          {projects.map((project, index) => (
+            <button
+              key={project.id}
+              onClick={() => emblaApi?.scrollTo(index)}
+              aria-label={`Aller au projet ${project.title}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                selectedIndex === index ? "w-6 bg-brand-500" : "w-2 bg-border"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </Container>
   );
 };
 
